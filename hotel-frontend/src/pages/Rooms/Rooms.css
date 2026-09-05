@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Raleway:wght@300;400;500;600&display=swap');
+
+/* ── Faqja ── */
+.rooms-page {
+    background: #faf7f2;
+    min-height: 100vh;
+    font-family: 'Raleway', sans-serif;
+}
+
+/* ── Header ── */
+.rooms-header {
+    text-align: center;
+    padding: 110px 20px 60px;
+}
+
+.rooms-header-sub {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: #b8965a;
+    margin: 0 0 12px;
+}
+
+.rooms-header-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 50px;
+    font-weight: 400;
+    color: #1c1a16;
+    margin: 0;
+}
+
+.rooms-header-line {
+    width: 50px;
+    height: 2px;
+    background: #b8965a;
+    margin: 24px auto 0;
+}
+
+/* ── Lista e dhomave ── */
+.rooms-list {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 40px 100px;
+}
+
+/* ── Rreshti i dhomës ── */
+.room-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 480px;
+    border-top: 1px solid #e2d9cc;
+}
+
+.room-row:last-child {
+    border-bottom: 1px solid #e2d9cc;
+}
+
+/* Rreshti i çift: foto djathtas, tekst majtas */
+.room-row-reverse {
+    direction: rtl;
+}
+.room-row-reverse > * {
+    direction: ltr;
+}
+
+/* ── Foto ── */
+.room-photo {
+    position: relative;
+    overflow: hidden;
+}
+
+.room-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+}
+
+.room-row:hover .room-photo img {
+    transform: scale(1.04);
+}
+
+/* Arrows */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background: rgba(250, 247, 242, 0.88);
+    border: none;
+    font-size: 26px;
+    color: #1c1a16;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.25s;
+    z-index: 2;
+}
+
+.room-photo:hover .arrow {
+    opacity: 1;
+}
+
+.arrow-left  { left: 12px; }
+.arrow-right { right: 12px; }
+
+/* Dots */
+.dots {
+    position: absolute;
+    bottom: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 7px;
+}
+
+.dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.45);
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.dot-active {
+    background: #ffffff;
+}
+
+/* ── Info ── */
+.room-info {
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 50px 60px;
+}
+
+.room-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 500;
+    color: #1c1a16;
+    margin: 0 0 20px;
+}
+
+/* Feature list — si jostcaravel.al */
+.room-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.room-features li {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    color: #3a3530;
+    background: #f0ebe0;
+    border: 1px solid #e2d9cc;
+    padding: 5px 14px;
+}
+
+/* Përshkrimi */
+.room-desc {
+    font-size: 14px;
+    font-weight: 300;
+    color: #6b6256;
+    line-height: 1.8;
+    margin: 0 0 32px;
+}
+
+/* Footer: çmimi + butoni */
+.room-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 24px;
+    border-top: 1px solid #e2d9cc;
+}
+
+.room-price {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    color: #b8965a;
+}
+
+.room-price small {
+    font-family: 'Raleway', sans-serif;
+    font-size: 12px;
+    color: #9a8e82;
+}
+
+/* Book Now */
+.book-btn {
+    display: inline-block;
+    padding: 12px 32px;
+    background: #1c1a16;
+    color: #f0e8d8;
+    font-family: 'Raleway', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 1px solid #1c1a16;
+    transition: background 0.25s, color 0.25s;
+}
+
+.book-btn:hover {
+    background: #b8965a;
+    border-color: #b8965a;
+    color: #ffffff;
+}
+
+/* ── Mobile ── */
+@media (max-width: 860px) {
+    .rooms-list { padding: 20px 20px 80px; }
+
+    .room-row {
+        grid-template-columns: 1fr;
+        min-height: unset;
+    }
+
+    .room-row-reverse { direction: ltr; }
+
+    .room-photo { height: 260px; }
+    .arrow { opacity: 1; }
+
+    .room-info { padding: 32px 24px 36px; }
+
+    .room-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .book-btn { width: 100%; text-align: center; }
+}
+.room-row {
+    overflow: visible !important;
+}
+
+.room-photo {
+    overflow: hidden;
+}

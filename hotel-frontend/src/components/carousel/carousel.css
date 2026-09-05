@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300&family=Jost:wght@300;400;500&display=swap');
+
+/* IMAGE */
+.hero-img {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  display: block;
+}
+
+/* OVERLAY */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.25) 0%,
+    rgba(0,0,0,0.1)  50%,
+    rgba(0,0,0,0.55) 100%
+  );
+  z-index: 1;
+}
+
+/* CAPTION */
+.hero-caption {
+  z-index: 2;
+  bottom: 50%;
+  transform: translateY(50%);
+  text-align: center;
+}
+
+.hero-sub {
+  font-family: 'Jost', sans-serif;
+  font-size: 11px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: #c9a96e;
+  margin-bottom: 12px;
+}
+
+.hero-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(60px, 10vw, 115px);
+  font-weight: 300;
+  letter-spacing: 12px;
+  text-transform: uppercase;
+  line-height: 1;
+  color: #fff;
+  margin-bottom: 16px;
+  white-space: nowrap;
+}
+.hero-title span { color: #c9a96e; }
+
+.hero-tagline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  font-style: italic;
+  font-weight: 300;
+  color: rgba(255,255,255,0.85);
+  letter-spacing: 2px;
+}
+
+/* ARROWS */
+.carousel-control-prev,
+.carousel-control-next {
+  width: 48px;
+  height: 48px;
+  top: 50%;
+  transform: translateY(-50%);
+  background:rgba(183, 166, 134, 0.323) ;
+  /* border: 1px solid white; */
+  opacity: 1 !important;
+  transition: all 0.3s;
+}
+.carousel-control-prev { left: 24px; }
+.carousel-control-next { right: 24px; }
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  background: rgba(201,169,110,0.35) !important;
+  border-color: #c9a96e;
+}
+
+/* DOTS */
+.carousel-indicators {
+  bottom: 24px;
+  z-index: 3;
+}
+.carousel-indicators [data-bs-target] {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.4);
+  border: none;
+  transition: background 0.3s;
+}
+.carousel-indicators .active {
+  background: #c9a96e;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .hero-img { height: 60vh; }
+  .hero-title { font-size: 52px; letter-spacing: 6px; }
+  .hero-tagline { font-size: 15px; }
+}

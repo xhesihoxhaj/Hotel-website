@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Jost:wght@300;400;500&display=swap');
+
+.about-section {
+  background: #9c91728b;
+  color: #130c0c;
+  padding: 100px 0;
+}
+
+.about-label {
+  font-family: 'Jost', sans-serif;
+  font-size: 15px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #5d3f06;
+  margin-bottom: 14px;
+}
+
+.about-heading {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 300;
+  line-height: 1.2;
+  color: #110d0d;
+  margin-bottom: 20px;
+}
+
+.about-divider {
+  width: 77px;
+  height: 4px;
+  background: #5c4212;
+  margin-bottom: 24px;
+}
+
+.about-desc {
+  font-family: 'Jost', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.9;
+  color: rgb(52, 37, 3);
+  margin-bottom: 16px;
+}
+
+/* STATS */
+.about-stats {
+  border-top: 1px solid rgba(201,169,110,0.2);
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.stat-number {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 36px;
+  font-weight: 300;
+  color: #c9a96e;
+  line-height: 1;
+}
+
+.stat-label {
+  font-family: 'Jost', sans-serif;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+}
+
+/* IMAGE */
+.about-image-wrap {
+  position: relative;
+}
+
+.about-img-placeholder {
+  width: 100%;
+  height: 520px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(201,169,110,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.2);
+  font-family: 'Jost', sans-serif;
+  font-size: 13px;
+  letter-spacing: 2px;
+}
+
+.about-img {
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+}
+
+.about-img-badge {
+  position: absolute;
+  bottom: -20px;
+  left: -20px;
+  width: 100px;
+  height: 100px;
+  background: #c9a96e98;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-img-badge span {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #000;
+  letter-spacing: 1px;
+}
+
+/* FEATURES */
+.feature-card {
+  background:rgba(116, 100, 100, 0.266);
+  border: 1px solid rgb(15, 7, 7) !important;
+  transition: border-color 0.3s, transform 0.3s;
+}
+
+.feature-card:hover {
+  border-color: rgba(201,169,110,0.35) !important;
+  transform: translateY(-4px);
+}
+
+.feature-icon {
+  font-size: 28px;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.feature-title {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: 20px !important;
+  font-weight: 400 !important;
+  color: #3d2e12 !important;
+  letter-spacing: 1px;
+}
+
+.feature-desc {
+  font-family: 'Jost', sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 300 !important;
+  line-height: 1.8 !important;
+  color: rgba(3, 1, 1, 0.927) !important;
+}

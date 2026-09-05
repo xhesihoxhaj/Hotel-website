@@ -1,0 +1,84 @@
+.gallery-page {
+  background: #faf7f2;
+  min-height: 100vh;
+  font-family: 'Raleway', sans-serif;
+}
+
+/* Header */
+.gallery-header {
+  text-align: center;
+  padding: 110px 20px 50px;
+}
+
+.gallery-sub {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: #b8965a;
+  margin: 0 0 12px;
+}
+
+.gallery-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 42px;
+  font-weight: 400;
+  color: #1c1a16;
+  margin: 0;
+}
+
+.gallery-line {
+  width: 50px;
+  height: 2px;
+  background: #b8965a;
+  margin: 20px auto 0;
+}
+
+/* Grid */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 30px 40px 80px;
+}
+
+.gallery-img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.gallery-img:hover {
+  transform: scale(1.03);
+}
+
+/* Overlay kur klikohet foto */
+.gallery-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.88);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  cursor: pointer;
+}
+
+.gallery-big-img {
+  max-width: 88vw;
+  max-height: 88vh;
+  object-fit: contain;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 20px 16px 60px;
+  }
+  .gallery-title { font-size: 28px; }
+}

@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Jost:wght@300;400;500&display=swap');
+
+.elmare-nav {
+  width: 100%;
+  /* background: #9583518b; */
+  background:rgba(183, 166, 134, 0.323) ;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.875);
+  border-top: 1px solid rgba(0, 0, 0, 0.875);
+  position: fixed;
+  top: 0; left: 0;
+  z-index: 999;
+  padding: 0 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+  transition: background 0.4s ease;
+}
+
+.elmare-nav.scrolled {
+  background: rgba(136, 111, 91, 0.99);
+  border-bottom: 1px solid rgba(201, 169, 110, 0.4);
+}
+
+.elmare-logo {
+  font-family: 'Cormorant Garamond', serif;
+  
+  font-size: 26px;
+  font-weight: 300;
+  letter-spacing: 5px;
+  color: #130303;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-transform: uppercase;
+}
+
+.elmare-logo .accent { color: white; }
+
+.ornament {
+  width: 28px; height: 1px;
+  background: #644917;
+  position: relative;
+  display: inline-block;
+  flex-shrink: 0;
+}
+.ornament::before, .ornament::after {
+  content: '';
+  position: absolute;
+  top: -3px;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: #7a5615;
+}
+.ornament::before { left: 0; }
+.ornament::after  { right: 0; }
+
+.elmare-links {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  list-style: none;
+  margin: 0; padding: 0;
+}
+
+.elmare-links a {
+  font-family: 'Jost', sans-serif;  
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: rgba(16, 9, 2, 0.962);
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 4px;
+  transition: color 0.3s;
+}
+.elmare-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 0; height: 1px;
+  background: #efedeb;
+  transition: width 0.3s ease;
+}
+.elmare-links a:hover { color: #fff; }
+.elmare-links a:hover::after { width: 100%; }
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.lang-flags { display: flex; gap: 40px; align-items: center; margin-right: 100px }
+.lang-flags img {
+  width: 35px; height: 25px;
+  border: 50%;
+  object-fit: cover;
+  cursor: pointer;
+  opacity: 0.65;
+  transition: opacity 0.3s;
+  border: 1px black;
+}
+.lang-flags img:hover, .lang-flags img.active {
+  opacity: 1;
+  border-color: rgba(4, 3, 1, 0.5);
+}
+
+.btn-book {
+  font-family: 'Jost', sans-serif;
+  font-size: 18px;
+  font-weight: 50;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background: transparent;
+  border: 2px solid #402b03;
+  border-radius: 10%;
+ 
+  color: #1c1404;
+  padding: 9px 22px;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-decoration: none;
+  white-space: nowrap;
+  margin-right: 30px;
+}
+.btn-book:hover { background: #ccb18166; color: #000; }
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 4px;
+  background: none;
+  border: none;
+}
+.hamburger span {
+  width: 22px; height: 1px;
+  background: rgba(255,255,255,0.8);
+  display: block;
+  transition: all 0.3s;
+}
+.hamburger.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+.mobile-menu {
+  position: fixed;
+  top: 72px; left: 0;
+  width: 100%;
+  background: rgba(8, 8, 8, 0.99);
+  border-top: 1px solid rgba(201,169,110,0.15);
+  padding: 2rem 3rem;
+  z-index: 998;
+  transform: translateY(-10px);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+.mobile-menu.open { transform: translateY(0); opacity: 1; pointer-events: all; }
+.mobile-menu ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 1.5rem; }
+.mobile-menu a {
+  font-family: 'Jost', sans-serif;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.mobile-menu a:hover { color: #c9a96e; }
+
+@media (max-width: 900px) {
+  .elmare-links, .lang-flags, .btn-book { display: none; }
+  .hamburger { display: flex; }
+}
