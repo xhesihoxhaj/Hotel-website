@@ -16,7 +16,8 @@ export class BookingController {
     }
 
     @Get()
-   
+    @UseGuards(AuthGuard, RolesGuard)
+    @Roles('admin')
     getAll() {
         return this.bookingService.getAll();
     }

@@ -8,6 +8,7 @@ const navLinks = [
   { label: "Gallery", to: "/gallery" },
   { label: "About", to: "/about" },
   { label: "Contact", to: "/contact" },
+  { label: "Admin", to: "/admin/login" },
 ];
 
 export default function Navbar() {

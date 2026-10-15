@@ -6,7 +6,7 @@ import { RoomEntity } from 'src/Rooms/entities/room.entity';
 import { BookingDto } from './DTO/booking.dto';
 import { UserEntity } from 'src/Users/entities/user.entity';
 import { BookingStatus } from './enums/booking-status.enum';
-import { LessThan, MoreThan, Repository } from 'typeorm';
+import { LessThan, MoreThan, Not, Repository } from 'typeorm';
 
 @Injectable()
 export class BookingService {
@@ -52,6 +52,7 @@ export class BookingService {
             check_in: checkIn,
             check_out: checkOut,
             guestCount: data.guestsCount,
+            notes: data.notes,
             total_price: totalPrice,
         });
         return this.bookingrepository.save(booking);
@@ -63,6 +64,7 @@ export class BookingService {
         const conflict = await this.bookingrepository.findOne({
             where: {
                 room: { id: roomId },
+                status: Not(BookingStatus.CANCELLED),
                 check_in: LessThan(checkOut),
                 check_out: MoreThan(checkIn),
             },

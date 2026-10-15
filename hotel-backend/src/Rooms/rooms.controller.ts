@@ -15,8 +15,8 @@ import { Roles } from 'src/Auth/roles.decorator';
 export class RoomsController {
   constructor(private readonly roomsService: RoomsService) { }
 
-  // @UseGuards(AuthGuard, RolesGuard)
-  // @Roles('admin')
+  @UseGuards(AuthGuard, RolesGuard)
+  @Roles('admin')
   @Post('create')
   @UseInterceptors(FilesInterceptor('images', 4, {
     storage: diskStorage({
@@ -40,7 +40,7 @@ export class RoomsController {
   ): Promise<RoomEntity> {
     return await this.roomsService.createRoom(data, files);
   }
- 
+
 
 
   @Get('all')
@@ -48,7 +48,7 @@ export class RoomsController {
     return this.roomsService.findALl();
   }
 
-  
+
   @Get('available')
   public async availableRoom(): Promise<RoomEntity[]> {
     return this.roomsService.findAvailable();
@@ -60,8 +60,8 @@ export class RoomsController {
   }
 
 
-  // @UseGuards(AuthGuard, RolesGuard)
-  // @Roles('admin')
+  @UseGuards(AuthGuard, RolesGuard)
+  @Roles('admin')
   @Patch(':id')
   public async updateRoom(
     @Param('id') id: number,

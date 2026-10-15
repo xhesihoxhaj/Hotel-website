@@ -97,7 +97,7 @@ const RoomCard = ({ room }) => {
                         <p className="overlay-desc">{room.description}</p>
                     </div>
 
-                    <Link to={`/rooms/${room.id}`}>
+                    <Link to="/booking">
                         <Button className="book-btn">Book</Button>
                     </Link>
                 </div>
@@ -113,10 +113,7 @@ const RoomsSection = () => {
         async function getRooms() {
             try {
                 const res = await axios.get("http://localhost:3000/rooms/all");
-                const selectedIds = [2, 3, 5];
-                const filtered = res.data.filter(p => selectedIds.includes(p.id));
-    
-                setRooms(filtered);
+                setRooms(res.data.slice(0, 3));
             } catch (err) {
                 console.log(err);
             }

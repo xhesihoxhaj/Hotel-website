@@ -53,7 +53,7 @@ export class RoomsService {
     await this.repository.update(id, {
       ...(data.name && { name: data.name }),
       ...(data.description && { description: data.description }),
-      ...(data.room_type && { roomCategory: data.room_type }), // ← ndrysho këtu
+      ...(data.room_type && { room_type: data.room_type }),
       ...(data.price !== undefined && { price: Number(data.price) }),
       ...(data.capacity !== undefined && { capacity: Number(data.capacity) }),
       ...(data.available !== undefined && {

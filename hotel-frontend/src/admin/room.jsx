@@ -3,7 +3,7 @@ import { Container, Row, Col, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { useAuth } from '../context/auth.context';
-import RoomTable from './RoomTable';
+import RoomTable from './roomtable';
 import CreateModal from './modal/create';
 import EditModal from './modal/edit';
 
